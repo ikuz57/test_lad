@@ -2,7 +2,7 @@ import asyncio
 import logging
 
 from sqlalchemy import select, func, and_
-from sqlalchemy.orm import selectinload
+# from sqlalchemy.orm import selectinload
 
 from db.models import Product, Price
 from db.sqlalchemy import async_session_factory
@@ -25,7 +25,8 @@ async def get_product_with_actual_price():
     #     result = (await session.execute(query)).scalars()
     #     # тут пытался сортировать и фильтровать price с помощтю подзапросов,
     #     # но не смог xD
-    #     # поэтому хоть так. Если можно то хотелось бы узнать как с подзапросом
+    #     # поэтому хоть так. Если можно то хотелось бы узнать как с
+    #     # подзапросом
     #     # сделать это.
     #     for product in result:
     #         last_prices = sorted(

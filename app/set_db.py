@@ -1,9 +1,5 @@
 import asyncio
 
-from sqlalchemy import desc, func, select
-from sqlalchemy.ext.asyncio import AsyncSession
-from sqlalchemy.orm import selectinload
-
 from db.models import Product, City, Category, Characteristic, PriceType, Price
 from db.sqlalchemy import async_session_factory
 
