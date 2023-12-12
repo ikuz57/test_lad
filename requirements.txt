@@ -1,0 +1,8 @@
+python-dotenv==1.0.0
+pydantic-settings==2.0.3
+# БД
+SQLAlchemy==2.0.22
+asyncpg==0.28.0
+alembic==1.12.0
+psycopg2-binary==2.9.9
+# psycopg2
