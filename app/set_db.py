@@ -95,6 +95,14 @@ async def set_db():
                 product_id=1
         )
         session.add(new_price)
+        new_price_2 = Price(
+                value=888,
+                link='2222',
+                type=2,
+                product_id=2
+        )
+        session.add(new_price)
+        session.add(new_price_2)
         await session.commit()
 
 if __name__ == '__main__':
