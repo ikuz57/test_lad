@@ -1,12 +1,10 @@
 import asyncio
-import dataclasses
 import logging
 
-from sqlalchemy import desc, func, select, and_
-from sqlalchemy.ext.asyncio import AsyncSession
+from sqlalchemy import select
 from sqlalchemy.orm import selectinload
 
-from db.models import Product, City, Category, Characteristic, PriceType, Price
+from db.models import Product
 from db.sqlalchemy import async_session_factory
 
 logging.basicConfig(level=logging.INFO)
@@ -21,6 +19,7 @@ async def get_product_with_actual_price():
         query = select(
             Product
         ).options(
+            # без этого в асинхронной алхимии никак, лениво не умеет грузить
             selectinload(Product.prices)
         )
         result = (await session.execute(query)).scalars()
